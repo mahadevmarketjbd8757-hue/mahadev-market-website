@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mahadev Market | शुद्धता और विश्वास</title>
+
+    <meta name="description"
+          content="Mahadev Market - शुद्ध और गुणवत्तापूर्ण आटा, सत्तू, बेसन, दाल एवं मसाला उत्पाद। Ghosi Road, Dakshini, Jehanabad, Bihar.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #fffaf0;
+            color: #3b1700;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #7b1e00;
+            padding: 13px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.18);
+        }
+
+        .logo {
+            color: #ffd54a;
+            font-size: 25px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            color: #ffd54a;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+            background:
+                linear-gradient(rgba(255,183,0,0.86), rgba(255,238,174,0.93));
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 9vw, 90px);
+            color: #7b1e00;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .hero h2 {
+            font-size: clamp(25px, 5vw, 45px);
+            color: #a62b00;
+            margin-top: 5px;
+        }
+
+        .tagline {
+            font-size: 22px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #4a1b00;
+        }
+
+        .hero-buttons {
+            margin-top: 28px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 35px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .call-btn {
+            background: #7b1e00;
+            color: white;
+        }
+
+        .call-btn:hover {
+            transform: translateY(-3px);
+            background: #a52b00;
+        }
+
+        .product-btn {
+            background: white;
+            color: #7b1e00;
+            border: 2px solid #7b1e00;
+        }
+
+        .product-btn:hover {
+            transform: translateY(-3px);
+            background: #fff0c2;
+        }
+
+        /* SECTION */
+        section {
+            padding: 70px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: #7b1e00;
+        }
+
+        .section-title p {
+            margin-top: 8px;
+            color: #704020;
+        }
+
+        /* PRODUCTS */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 18px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 7px 22px rgba(93, 45, 0, 0.12);
+            border-top: 5px solid #d88900;
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 28px rgba(93, 45, 0, 0.18);
+        }
+
+        .product-icon {
+            font-size: 55px;
+            margin-bottom: 12px;
+        }
+
+        .product-card h3 {
+            color: #7b1e00;
+            font-size: 25px;
+        }
+
+        .product-card p {
+            margin-top: 8px;
+            color: #69472f;
+        }
+
+        /* ABOUT */
+        .about {
+            background: #fff0c7;
+        }
+
+        .about-box {
+            max-width: 950px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-box h3 {
+            color: #7b1e00;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .about-box p {
+            font-size: 18px;
+        }
+
+        /* SOCIAL */
+        .social {
+            text-align: center;
+            background: white;
+        }
+
+        .social-title {
+            font-size: 34px;
+            color: #7b1e00;
+            margin-bottom: 10px;
+        }
+
+        .social-subtitle {
+            margin-bottom: 30px;
+            color: #65452f;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            min-width: 210px;
+            padding: 15px 22px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-4px);
+        }
+
+        .instagram {
+            background: #c13584;
+        }
+
+        .youtube {
+            background: #d60000;
+        }
+
+        .facebook {
+            background: #1877f2;
+        }
+
+        /* QR */
+        .qr-section {
+            text-align: center;
+            background: #fff7df;
+        }
+
+        .qr-box {
+            background: white;
+            max-width: 500px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .qr-box img {
+            width: min(100%, 360px);
+            border-radius: 12px;
+        }
+
+        .qr-box h3 {
+            color: #7b1e00;
+            margin-top: 18px;
+            font-size: 24px;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: #7b1e00;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: #ffd54a;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            font-size: 18px;
+            margin: 8px 0;
+        }
+
+        .contact-call {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 30px;
+            border-radius: 35px;
+            background: #ffd54a;
+            color: #7b1e00;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 19px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #390d00;
+            color: #ffe7b0;
+            text-align: center;
+            padding: 22px;
+            font-size: 14px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 13px 18px;
+            }
+
+            .logo {
+                font-size: 19px;
+            }
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+
+            section {
+                padding: 55px 5%;
+            }
+
+            .hero {
+                min-height: 78vh;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .contact h2 {
+                font-size: 31px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">MAHADEV MARKET</div>
+
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>MAHADEV</h1>
+        <h2>MARKET</h2>
+
+        <div class="tagline">
+            शुद्धता और विश्वास
+        </div>
+
+        <p>
+            Pure • Fresh • Quality Food Products
+        </p>
+
+        <div class="hero-buttons">
+
+            <!-- DIRECT CALL -->
+            <a href="tel:+918757360888" class="btn call-btn">
+                📞 Call Now
+            </a>
+
+            <a href="#products" class="btn product-btn">
+                🛒 View Products
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+<section id="products">
+
+    <div class="section-title">
+        <h2>Our Products</h2>
+        <p>गुणवत्ता और शुद्धता के साथ हमारे खाद्य उत्पाद</p>
+    </div>
+
+    <div class="products">
+
+        <!-- AATA -->
+        <div class="product-card">
+            <div class="product-icon">🌾</div>
+            <h3>आटा</h3>
+            <p>Fresh & Quality Wheat Flour</p>
+        </div>
+
+        <!-- SATTU -->
+        <div class="product-card">
+            <div class="product-icon">🌾</div>
+            <h3>सत्तू</h3>
+            <p>Fresh & Nutritious Sattu</p>
+        </div>
+
+        <!-- BESAN -->
+        <div class="product-card">
+            <div class="product-icon">🥣</div>
+            <h3>बेसन</h3>
+            <p>Quality Gram Flour</p>
+        </div>
+
+        <!-- DAAL -->
+        <div class="product-card">
+            <div class="product-icon">🫘</div>
+            <h3>दाल</h3>
+            <p>Fresh & Quality Pulses</p>
+        </div>
+
+        <!-- CORIANDER -->
+        <div class="product-card">
+            <div class="product-icon">🌿</div>
+            <h3>धनिया पाउडर</h3>
+            <p>Fresh Coriander Powder</p>
+        </div>
+
+        <!-- TURMERIC -->
+        <div class="product-card">
+            <div class="product-icon">🌿</div>
+            <h3>हल्दी पाउडर</h3>
+            <p>Pure Turmeric Powder</p>
+        </div>
+
+        <!-- CHILLI -->
+        <div class="product-card">
+            <div class="product-icon">🌶️</div>
+            <h3>मिर्च पाउडर</h3>
+            <p>Quality Red Chilli Powder</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+    <div class="about-box">
+
+        <h3>About Mahadev Market</h3>
+
+        <p>
+            Mahadev Market का उद्देश्य ग्राहकों तक
+            गुणवत्तापूर्ण, शुद्ध और भरोसेमंद खाद्य उत्पाद
+            पहुँचाना है।
+        </p>
+
+        <p style="margin-top:15px;">
+            हमारे उत्पादों में आटा, सत्तू, बेसन, दाल और विभिन्न
+            प्रकार के मसाला पाउडर शामिल हैं।
+        </p>
+
+        <p style="margin-top:15px; font-weight:bold;">
+            शुद्धता और विश्वास — यही हमारी पहचान है।
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SOCIAL MEDIA -->
+<section class="social">
+
+    <h2 class="social-title">
+        Explore Mahadev Market on the Following Platforms
+    </h2>
+
+    <p class="social-subtitle">
+        Follow us and stay connected with Mahadev Market
+    </p>
+
+    <div class="social-buttons">
+
+        <!-- INSTAGRAM -->
+        <a
+            href="https://www.instagram.com/mahadevmarketorganisation?utm_source=qr&stkn=MWh4cWNqdzVtengyMw=="
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-btn instagram">
+            📸 Instagram
+        </a>
+
+        <!-- YOUTUBE -->
+        <a
+            href="https://www.youtube.com/@Mahadev_Market_MM"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-btn youtube">
+            ▶️ YouTube
+        </a>
+
+        <!-- FACEBOOK -->
+        <a
+            href="#"
+            class="social-btn facebook"
+            onclick="return false;">
+            📘 Facebook — Coming Soon
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- INSTAGRAM QR -->
+<section class="qr-section">
+
+    <div class="section-title">
+        <h2>Scan & Follow Us</h2>
+        <p>Scan the QR code to visit our Instagram</p>
+    </div>
+
+    <div class="qr-box">
+
+        <!--
+        अपने QR image का नाम qr-code.png रखें
+        और इसे इसी folder में रखें।
+        -->
+
+        <img
+            src="qr-code.png"
+            alt="Mahadev Market Organisation Instagram QR Code">
+
+        <h3>@MAHADEVMARKETORGANISATION</h3>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+    <h2>Contact Mahadev Market</h2>
+
+    <p>📍 Ghosi Road, Dakshini, Jehanabad, Bihar</p>
+
+    <p>📞 8757360888</p>
+
+    <!-- DIRECT CALL -->
+    <a
+        href="tel:+918757360888"
+        class="contact-call">
+        📞 Call Us Directly
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        © 2026 Mahadev Market. All Rights Reserved.
+    </p>
+
+    <p>
+        शुद्धता और विश्वास
+    </p>
+
+    <p style="margin-top:7px;">
+        Directed by Nitesh Kumar
+    </p>
+
+</footer>
+
+</body>
+</html>
